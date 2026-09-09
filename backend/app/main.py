@@ -36,7 +36,7 @@ def get_users():
     return {"message": "Users API Working"}
 
 
-# ---------------- INSTRUMENTS ----------------
+#INSTRUMENTS
 
 @app.post("/instruments")
 def create_instrument(
@@ -67,7 +67,7 @@ def get_instruments(db: Session = Depends(get_db)):
     return db.query(Instrument).all()
 
 
-# ---------------- INSPECTIONS ----------------
+#INSPECTIONS
 
 @app.post("/inspections")
 def create_inspection(
@@ -96,7 +96,7 @@ def create_inspection(
 def get_inspections(db: Session = Depends(get_db)):
     return db.query(Inspection).all()
 
-# ---------------- CERTIFICATES ----------------
+#CERTIFICATES 
 
 @app.post("/certificates")
 def create_certificate(
@@ -126,7 +126,7 @@ def get_certificates(db: Session = Depends(get_db)):
     return db.query(Certificate).all()
 
 
-# ---------------- VERIFICATIONS ----------------
+#VERIFICATIONS 
 
 @app.post("/verifications")
 def create_verification(
@@ -154,7 +154,7 @@ def get_verifications(db: Session = Depends(get_db)):
     return db.query(Verification).all()
 
 
-# ---------------- DASHBOARD ----------------
+#DASHBOARD
 
 @app.get("/dashboard")
 def dashboard(db: Session = Depends(get_db)):
@@ -166,7 +166,7 @@ def dashboard(db: Session = Depends(get_db)):
     }
 
 
-# ---------------- CERTIFICATE VERIFY ----------------
+#CERTIFICATE VERIFY
 
 @app.get("/verify/{certificate_number}")
 def verify_certificate(

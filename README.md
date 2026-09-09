@@ -1,135 +1,201 @@
-# MeasureSure — Frontend Teammate 1
+# Pramaanika
 
-React + Vite + Tailwind CSS + React Router + Lucide React + Recharts.
+### Online Verification & Digital Certification System for Weighing and Measuring Instruments
 
-## Your scope
+Pramaanika is a digital platform designed to modernize the verification, certification, and lifecycle management of weighing and measuring instruments under the Legal Metrology ecosystem.
 
-Only these eight routes are implemented:
+The platform brings instrument registration, verification workflows, inspections, digital certificates, QR-based verification, verification history, monitoring, and administrative operations into a unified system.
 
-| Route                 | Screen                                         | Access           |
-| --------------------- | ---------------------------------------------- | ---------------- |
-| /login                | Sign in                                        | Everyone         |
-| /register             | Create inspector account                       | Everyone         |
-| /dashboard            | Verification Hub                               | Inspector, Admin |
-| /instruments          | Search, filter, sort, paginate and edit        | Inspector, Admin |
-| /instruments/register | Instrument registration                        | Inspector, Admin |
-| /instruments/:id      | Instrument details                             | Inspector, Admin |
-| /admin                | Administration overview                        | Admin            |
-| /admin/users          | Add, view, edit, activate and deactivate users | Admin            |
+---
 
-Inspection, certificate, QR verification and blockchain modules from the previous version have been removed. The previous source remains recoverable in Git history.
+## 📌 Problem Statement
 
-## Run locally
+Verification of weighing and measuring instruments involves several activities such as application submission, scheduling, physical inspection, recording observations, issuing certificates, maintaining records, and monitoring verification validity.
 
-Use a current Node.js version compatible with Vite 8 (Node 22.12+ recommended).
+Traditional or fragmented processes can result in:
 
-```bash
-npm install
-npm run dev
-```
+- Manual paperwork
+- Delays in verification
+- Difficulty tracking verification status
+- Fragmented records
+- Limited transparency
+- Difficulty monitoring certificate validity
+- Challenges in quickly authenticating certificates
 
-Other commands:
+Pramaanika aims to provide a centralized digital workflow for these activities.
 
-```bash
-npm run lint
-npm run build
-npm run preview
-```
+---
 
-Open the local URL printed by Vite. All demo features work without an external backend.
+## 💡 Our Solution
 
-## Demo accounts
+Pramaanika provides a unified web-based platform for stakeholders involved in Legal Metrology verification.
 
-| Role          | Email                 | Password    |
-| ------------- | --------------------- | ----------- |
-| Administrator | admin@example.com     | password123 |
-| Inspector     | inspector@example.com | password123 |
+The system enables:
 
-The login page also has role buttons that fill these credentials.
+- Digital stakeholder registration
+- Instrument registration and management
+- Online verification and re-verification workflows
+- Inspection recording
+- Verification scheduling
+- Digital certificate generation
+- QR-based certificate verification
+- Verification history
+- Certificate validity tracking
+- Alerts and notifications
+- Dashboards and monitoring
+- Role-based access
+- Centralized digital records
 
-Create-account registration always creates an inspector. Only an administrator can assign roles in User Management. Role guards exist at the route and mock-service level; this is a UI demonstration, not real security.
+---
 
-## Where to make changes
+# 🎯 Key Features
 
-| What you want to change                                              | File                                |
-| -------------------------------------------------------------------- | ----------------------------------- |
-| App name, initials, logo, organization, locale, timezone, page size  | src/config/appConfig.js             |
-| Primary color, sidebar color, page background, radius, sidebar width | src/config/themeConfig.js           |
-| Sidebar items, URLs, page titles and role visibility                 | src/config/navigationConfig.js      |
-| Verification Hub cards and chart colors                              | src/config/dashboardConfig.js       |
-| Instrument types, fields, sections, filters and table columns        | src/config/instrumentConfig.js      |
-| Roles, account statuses, user fields, filters and columns            | src/config/userConfig.js            |
-| Badge labels and semantic styles                                     | src/config/statusConfig.js          |
-| Sample user names, emails, credentials                               | src/data/mockUsers.js               |
-| Sample instruments and owners                                        | src/data/mockInstruments.js         |
-| Sample activity                                                      | src/data/mockActivities.js          |
-| Verification Hub reporting months                                    | src/data/mockDashboard.js           |
-| Shared table, sorting and pagination                                 | src/components/common/DataTable.jsx |
-| Input validation and password strength                               | src/utils/validation.js             |
-| Common form rendering                                                | src/components/common/Forms.jsx     |
-| Overall CSS layout and component styling                             | src/index.css                       |
-| Page routing and access guards                                       | src/routes/routes.jsx               |
+## 👤 User & Role Management
 
-### Example: change the app name
+- User registration and login
+- Role-based access
+- Inspector workspace
+- Administrator workspace
+- User management
 
-Edit `appConfig.name`. The sidebar, login branding, footer and browser tab titles use the same value.
+---
 
-For a custom logo, set `appConfig.logo.imageUrl` to an image placed in `public/`, for example `/my-logo.png`. Otherwise choose an icon name from `components/common/Icon.jsx`.
+## ⚖️ Instrument Management
 
-### Example: change the primary color
+- Register weighing and measuring instruments
+- Store instrument specifications
+- Store owner information
+- Search and filter instruments
+- Track verification status
+- View instrument details
+- Track certificate validity
 
-Change `themeConfig.primary`, `primaryDark` and `primarySoft`. They become CSS variables, and the buttons, links, charts and focus outlines use them.
+---
 
-### Example: add a table column
+## 🔍 Inspection Management
 
-Add `{ key: 'model', label: 'Model' }` to `instrumentColumns`. No page markup change is required.
+- Create inspection records
+- Select registered instruments
+- Record inspection date
+- Perform accuracy checks
+- Check seals
+- Record physical condition
+- Check standard compliance
+- Record remarks
+- Determine inspection result
+- Define certificate validity
 
-### Example: add a form field
+---
 
-Add an object to a section's `fields` array. The form, live validation, details screen and instrument update service use that configuration. Add its values to mock records if you want existing samples to display them.
+## 📜 Digital Certificates
 
-Supported field types: text, email, tel, password, select and textarea. Supported validation: required, minLength, select options and matches.
+Pramaanika provides a digital certificate workflow for successfully verified instruments.
 
-### Example: add a Verification Hub card
+Certificates contain information such as:
 
-Add an object to `dashboardStats`, referencing an existing statistic by `id`. For a new calculated value, add that calculation to `dashboardService.getDashboardStats()`.
+- Certificate ID
+- Instrument details
+- Owner details
+- Verification date
+- Validity period
+- Inspector information
+- Verification status
+- QR verification information
 
-## How the code fits together
+Certificates can also be previewed, printed, and downloaded through the frontend.
+
+---
+
+## 📱 QR-Based Verification
+
+Each digital verification certificate can be associated with a QR code.
+
+The public verification workflow allows users to check certificate authenticity without requiring access to the internal dashboard.
+
+Possible verification states include:
+
+- ✅ Verified
+- ❌ Not Verified
+- ⚠️ Tampering Detected
+
+This helps improve transparency and public confidence in verification records.
+
+---
+
+## 🧾 Verification History
+
+The platform maintains verification activity records including:
+
+- Verification ID
+- Certificate ID
+- Instrument ID
+- Inspector
+- Verification date
+- Verification result
+- Blockchain status
+
+Search and filtering capabilities allow authorized users to retrieve previous verification records.
+
+---
+
+## 🔔 Notifications & Alerts
+
+The system can provide notifications related to:
+
+- Certificate expiry
+- Verification completion
+- Pending verification
+- Instrument registration
+- Other important workflow events
+
+---
+
+## 📊 Dashboard & Monitoring
+
+Dashboards provide an overview of verification activities.
+
+Monitoring information can include:
+
+- Total instruments
+- Verified instruments
+- Pending verification
+- Expired certificates
+- Recent inspections
+- Verification status
+- Verification activity
+
+---
+
+# 🏗️ System Architecture
 
 ```text
-Page -> service function -> in-memory mock store
-                       -> response -> page state -> feedback
-```
-
-Pages never edit mock arrays. Services own validation and mutations. Shared forms call the provided submit handler; they handle busy state and show errors. The same configurable DataTable serves instruments, users and activity.
-
-## Demo data lifetime
-
-Run the service regression checks with `node --test tests/services.test.mjs`.
-They cover login, permissions, duplicates, record changes and Verification Hub totals
-without extra dependencies.
-
-Data mutations live in memory. They persist during navigation and sign-out/sign-in in the same loaded page, and reset on a full browser reload. Different tabs and visitors do not share records. Session storage remembers only the current mock user ID.
-
-A newly registered account can be used immediately; reloading resets it along with other newly created records. Change files under `src/data/` to make permanent demo seed changes.
-
-This intentional behavior keeps the frontend independent of a database. Do not enter real passwords or personal data into the demo.
-
-## Connecting your teammate's backend later
-
-Replace implementations in:
-
-- services/authService.js
-- services/instrumentService.js
-- services/userService.js
-- services/dashboardService.js
-
-Keep the exported function names, argument shapes and returned record fields. Resolve with data or throw an Error with a user-friendly message. Do not add API requests inside pages.
-
-The backend must enforce authentication and roles. Current route guards and session storage are only for the mock interface.
-
-## Hosting
-
-The existing public Site is retained. `scripts/create-worker.mjs` packages the built static frontend into a hosting adapter. It only serves files and SPA routes; it has no business API, authentication, database or data mutations.
-
-Git history preserves the earlier full-scope application. This checkout contains only the new teammate scope.
+                    ┌─────────────────────┐
+                    │      Users          │
+                    │ Businesses / LMOs   │
+                    │ GATCs / Authorities │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Pramaanika Web    │
+                    │      Frontend       │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │      Backend        │
+                    │    REST APIs        │
+                    └──────────┬──────────┘
+                               │
+             ┌─────────────────┼─────────────────┐
+             ▼                 ▼                 ▼
+      ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+      │ PostgreSQL  │   │ Certificate │   │ Blockchain  │
+      │  Database   │   │   System    │   │   Layer     │
+      └─────────────┘   └─────────────┘   └─────────────┘
+                               │
+                               ▼
+                      ┌────────────────┐
+                      │ QR Verification│
+                      │     Portal     │
+                      └────────────────┘
